@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global.Vue3PerfectScrollbar = {})));
-}(this, (function (exports) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global.Vue3PerfectScrollbar = factory());
+}(this, (function () { 'use strict';
 
     /**
      * Make a map and return a function for checking if a key
@@ -5222,7 +5222,7 @@
       'ps-x-reach-end'
     ];
 
-    var PerfectScrollbar$1 = {
+    var Scrollbar = {
       name: 'PerfectScrollbar',
       props: {
         options: {
@@ -5316,38 +5316,6 @@
       }
     };
 
-    var index = {
-      install: function (Vue, settings) {
-        if (settings) {
-          if (settings.name && typeof settings.name === 'string') {
-            PerfectScrollbar$1.name = settings.name;
-          }
-
-          if (settings.options && typeof settings.options === 'object') {
-            PerfectScrollbar$1.props.options.default = function () {
-              return settings.options
-            };
-          }
-
-          if (settings.tag && typeof settings.tag === 'string') {
-            PerfectScrollbar$1.props.tag.default = settings.tag;
-          }
-
-          if (settings.watchOptions && typeof settings.watchOptions === 'boolean') {
-            PerfectScrollbar$1.props.watchOptions = settings.watchOptions;
-          }
-        }
-
-        Vue.component(
-          PerfectScrollbar$1.name,
-          PerfectScrollbar$1
-        );
-      }
-    };
-
-    exports.default = index;
-    exports.PerfectScrollbar = PerfectScrollbar$1;
-
-    Object.defineProperty(exports, '__esModule', { value: true });
+    return Scrollbar;
 
 })));

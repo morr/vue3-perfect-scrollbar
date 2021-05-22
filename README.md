@@ -25,63 +25,6 @@ yarn add vue3-perfect-scrollbar
 
 # How to use 
 
-## Global Registration
-
-```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import PerfectScrollbar from 'vue3-perfect-scrollbar'
-import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
-
-const app = createApp(App)
-app.use(PerfectScrollbar)
-app.mount('#app')
-
-```
-
-So then you can use this plugin in each component as
-
-```html
-<perfect-scrollbar>
-    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-</perfect-scrollbar>
-```
-
-This plugin will generate a container with ".ps" class name, you need to customize the height of the container
-
-```css
-/* example */
-.ps {
-  height: 400px;
-}
-```
-
-[![Edit Vue Template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/wn7q7o9ww7)
-
-### Global options
-
-Install method takes additional parameters:
-
-#### `name {String}`
-Name of your global component.
-
-**Default**: `PerfectScrollbar`
-
-#### `tag {String}`
-Tag which will be render as perfect scrollbar container
-
-**Default**: `div`
-
-#### `watchOptions {Boolean}`
-Set true if you want to update perfect-scrollbar on options change
-
-**Default**: `false`
-
-#### `options {Object}`: [Options](https://github.com/utatti/perfect-scrollbar#options)
-perfect-scrollbar options.
-
-**Default**: `{}`
-
 ## Local Registration
 
 ```html
@@ -93,7 +36,7 @@ perfect-scrollbar options.
     </div>
 </template>
 <script>
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import PerfectScrollbar from 'vue3-perfect-scrollbar'
 export default {
     components: {
         PerfectScrollbar

@@ -5,7 +5,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import pkg from './package.json'
 
 const browser = {
-  input: 'src/index.js',
+  input: 'src/Scrollbar.js',
   output: {
     format: 'umd',
     name: 'Vue3PerfectScrollbar',
@@ -21,7 +21,7 @@ const browser = {
 }
 
 const browserMin = {
-  input: 'src/index.js',
+  input: 'src/Scrollbar.js',
   output: {
     format: 'umd',
     name: 'Vue3PerfectScrollbar',
@@ -37,25 +37,7 @@ const browserMin = {
   ]
 }
 
-const nodeModules = {
-  input: 'src/index.js',
-  output: [
-    {
-      format: 'cjs',
-      file: pkg.main
-    },
-    {
-      format: 'esm',
-      file: pkg.module
-    }
-  ],
-  plugins: [
-  ],
-  external: [ 'perfect-scrollbar' ]
-}
-
 export default [
   browser,
-  browserMin,
-  nodeModules
+  browserMin
 ]
